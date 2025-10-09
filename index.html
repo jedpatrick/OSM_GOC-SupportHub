@@ -244,20 +244,20 @@
             }
         });
 
-    // --- INITIALIZATION: Fetch Data ---
-async function initializeHub() {
-    try {
-        // FIX: Appending a timestamp query parameter to bypass aggressive caching
-        const cacheBuster = `?v=${new Date().getTime()}`;
-        const dataUrl = `/project_data.json${cacheBuster}`;
+        // --- INITIALIZATION: Fetch Data ---
+        async function initializeHub() {
+            try {
+                // FIX: Appending a timestamp query parameter to bypass aggressive caching
+                const cacheBuster = `?v=${new Date().getTime()}`;
+                const dataUrl = `/project_data.json${cacheBuster}`;
 
-        const response = await fetch(dataUrl);
-
-        if (!response.ok) {
-            throw new Error(`HTTP status ${response.status}: Failed to load project_data.json`);
-        }
-
-        PROJECT_DATA = await response.json();
+                const response = await fetch(dataUrl);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP status ${response.status}: Failed to load project_data.json`);
+                }
+                
+                PROJECT_DATA = await response.json();
                 
                 // If data loads successfully, proceed with rendering
                 createTabs();
@@ -278,5 +278,6 @@ async function initializeHub() {
         // Initialize the app on load
         document.addEventListener('DOMContentLoaded', initializeHub);
     </script>
+    <!-- CACHE BUSTER TAG: V2.5 -->
 </body>
 </html>
