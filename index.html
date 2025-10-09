@@ -93,7 +93,7 @@
 </head>
 <body class="flex justify-center">
     <div class="container-main">
-        <h1 class="text-4xl font-extrabold text-gray-800 mb-2 text-center">Support Environment Command Center</h1>
+        <h1 class="text-4xl font-extrabold text-gray-800 mb-2 text-center">OSM GOC Hub</h1>
         <p class="text-gray-500 mb-8 text-center">Your consolidated resource for all project documentation and links.</p>
 
         <!-- SECURITY ALERT AND INSTRUCTIONS -->
@@ -244,18 +244,20 @@
             }
         });
 
-        // --- INITIALIZATION: Fetch Data ---
-        async function initializeHub() {
-            try {
-                // FIX: Changed relative path 'project_data.json' to absolute path '/project_data.json'
-                // to resolve URL parsing errors in sandboxed environments like Codespaces.
-                const response = await fetch('/project_data.json');
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP status ${response.status}: Failed to load project_data.json`);
-                }
-                
-                PROJECT_DATA = await response.json();
+    // --- INITIALIZATION: Fetch Data ---
+async function initializeHub() {
+    try {
+        // FIX: Appending a timestamp query parameter to bypass aggressive caching
+        const cacheBuster = `?v=${new Date().getTime()}`;
+        const dataUrl = `/project_data.json${cacheBuster}`;
+
+        const response = await fetch(dataUrl);
+
+        if (!response.ok) {
+            throw new Error(`HTTP status ${response.status}: Failed to load project_data.json`);
+        }
+
+        PROJECT_DATA = await response.json();
                 
                 // If data loads successfully, proceed with rendering
                 createTabs();
