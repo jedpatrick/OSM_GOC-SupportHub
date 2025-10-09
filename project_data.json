@@ -1,0 +1,50 @@
+{
+    "BSNC (Current)": [
+        { "category": "Process", "item": "Change Request Workflow", "description": "Steps for submitting and approving feature requests/changes.", "link": "https://yourcompany.confluence.com/display/ALPHA/CR-Workflow", "notes": "Requires sign-off from Project Lead and Business Owner." },
+        { "category": "Process", "item": "Testing Checklist", "description": "Checklist of mandatory tests before deployment to Staging.", "link": "https://yourcompany.sharepoint.com/sites/Alpha/TestingChecklist.xlsx", "notes": "Always update JIRA ticket status after testing." },
+        
+        { "category": "Knowledge Transfer", "item": "Initial KT Deck", "description": "Presentation deck covering the system's architecture and setup.", "link": "https://yourcompany.sharepoint.com/sites/Alpha/KT_Deck_V1.pptx", "notes": "Essential for new team members." },
+        { "category": "Knowledge Transfer", "item": "Service API Specs (Swagger)", "description": "Documentation for the core microservice APIs.", "link": "https://api.alpha.com/swagger-ui/index.html", "notes": "Use for postman setup and integration checks." },
+
+        { "category": "Communication & Escalation", "item": "Project Slack Channel", "description": "Primary channel for all quick questions and real-time updates.", "link": "https://yourcompany.slack.com/archives/C12345ABC", "notes": "Set alerts for @here mentions." },
+        { "category": "Communication & Escalation", "item": "Team Distribution List", "description": "Email list for official announcements and meeting invites.", "link": "team-alpha-support@yourcompany.com", "notes": "Do not use for urgent P1 issues." },
+        
+        { "category": "Project Setup", "item": "Project Charter & Goals", "description": "Initial documentation defining scope and deliverables.", "link": "https://yourcompany.confluence.com/display/ALPHA/Charter", "notes": "Focus on V1 MVP scope." },
+        { "category": "Project Setup", "item": "Initial Repository", "description": "Link to the main GitHub repository.", "link": "https://github.com/YourOrg/Alpha-Core", "notes": "Use 'main' branch for deployment." },
+        { "category": "Customer Dev Environment", "item": "Alpha Dev Instance", "description": "Dedicated development environment URL.", "link": "https://dev.alpha.customer.com", "notes": "Requires VPN and Azure AD access." },
+        { "category": "How-Tos", "item": "Tech Stack Overview", "description": "Document detailing front-end and back-end technologies.", "link": "https://yourcompany.sharepoint.com/sites/Alpha/TechStack", "notes": "Node.js, React, and Python services." }
+    ],
+    "CHA_GR (Current)": [
+        { "category": "Process", "item": "Incident Management Runbook", "description": "Step-by-step guide for handling P1/P2 incidents.", "link": "https://yourcompany.confluence.com/display/BETA/Incident-Runbook", "notes": "Contains rollback procedures and communication templates." },
+        { "category": "Process", "item": "Customer Feedback Loop", "description": "Process for collecting and integrating customer feedback tickets.", "link": "https://yourcompany.jira.com/secure/RapidBoard.jspa?rapidView=900", "notes": "Reviewed weekly by the Product Owner." },
+        
+        { "category": "Knowledge Transfer", "item": "Deep Dive Session Recordings", "description": "Recordings of all technical deep-dive and code review sessions.", "link": "\\shared-drive\\docs\\Beta\\KT_Sessions", "notes": "Organized by date and topic." },
+        { "category": "Knowledge Transfer", "item": "Key DB Schema Diagrams", "description": "Visual reference for the core database tables and relationships.", "link": "https://yourcompany.confluence.com/display/BETA/DBSchema", "notes": "Crucial for writing complex queries." },
+
+        { "category": "Communication & Escalation", "item": "On-Call Rotation Schedule", "description": "Calendar link for the current support rotation.", "link": "https://calendar.google.com/calendar/embed?src=oncallbeta", "notes": "Check before performing maintenance." },
+        { "category": "Communication & Escalation", "item": "Outage Status Page", "description": "Publicly visible status page for system health.", "link": "https://status.betaproject.com", "notes": "Update immediately upon detecting an outage." },
+        
+        { "category": "Internal Links", "item": "Jira Board - Sprint Backlog", "description": "Track progress on current sprint tasks and issues.", "link": "https://yourcompany.jira.com/secure/RapidBoard.jspa?rapidView=456", "notes": "Daily standup reference." },
+        { "category": "Tools", "item": "Grafana Dashboard - Prod", "description": "Real-time monitoring dashboard for production environment.", "link": "https://grafana.yourcompany.com/d/beta-prod", "notes": "Check this first for P1 alerts." },
+        { "category": "Genesys Cloud Telephony", "item": "Admin Portal Access", "description": "Main administration interface for Genesys Cloud.", "link": "https://apps.mypurecloud.com/admin/beta", "notes": "Manage queues and routing for Beta." },
+        { "category": "Genesys Cloud Telephony", "item": "Call Flow Diagrams", "description": "Visual representations of Genesys Cloud call routing.", "link": "\\shared-drive\\docs\\Beta_CallFlows.vsdx", "notes": "Updated V2 diagrams." },
+        { "category": "Customer Links", "item": "Customer Portal - Beta Client", "description": "Direct link to Beta Client's customer-facing portal.", "link": "https://portal.betaclient.com", "notes": "Access requires 2FA." },
+        { "category": "How-Tos", "item": "Deploying to Production", "description": "Emergency guide for hotfixes and urgent deployments.", "link": "https://yourcompany.confluence.com/display/OPS/Beta+Prod+Deployment", "notes": "Requires Lead approval + Team sign-off." }
+    ],
+    "TV (New/Upcoming)": [
+        { "category": "Process", "item": "Monthly Patch Cycle", "description": "Schedule and steps for applying OS and security patches to legacy servers.", "link": "https://yourcompany.confluence.com/display/GAMMA/Patching-Schedule", "notes": "Patches applied on the 3rd Tuesday of every month." },
+        { "category": "Process", "item": "End-of-Life (EOL) Assets List", "description": "List of all systems scheduled for decommissioning.", "link": "https://yourcompany.sharepoint.com/sites/Gamma/EOL_List", "notes": "Reference before starting any new development." },
+
+        { "category": "Knowledge Transfer", "item": "System Architecture Diagrams", "description": "Original diagrams showing physical and virtual server layout.", "link": "\\shared-drive\\docs\\Gamma\\System_Arch.pdf", "notes": "Essential for understanding legacy dependencies." },
+        { "category": "Knowledge Transfer", "item": "SOPs for System Restart", "description": "Standard Operating Procedures for restarting core legacy services.", "link": "https://yourcompany.confluence.com/display/GAMMA/Restart_SOPs", "notes": "Requires root access credentials." },
+
+        { "category": "Communication & Escalation", "item": "Legacy Support Email Alias", "description": "The official email address for all incoming support requests.", "link": "gamma-legacy-support@yourcompany.com", "notes": "Monitored during business hours only." },
+        { "category": "Communication & Escalation", "item": "Vendor Contact List", "description": "List of external vendors responsible for legacy hardware/software.", "link": "\\shared-drive\\docs\\Gamma\\Vendor_Contacts.xlsx", "notes": "Includes 24/7 emergency numbers." },
+        
+        { "category": "Internal Links", "item": "Legacy Documentation Archive", "description": "Older documents and design specifications.", "link": "https://yourcompany.sharepoint.com/sites/Gamma/Archive", "notes": "Reference only. Data may be outdated." },
+        { "category": "How-Tos", "item": "VPN Connection Guide (Legacy)", "description": "Steps to connect to the old company VPN for legacy access.", "link": "\\shared-drive\\docs\\Legacy_VPN_Setup.pdf", "notes": "Only for accessing the Gamma internal network." },
+        { "category": "Tools", "item": "VS Code Extensions Pack (Gamma)", "description": "Recommended extensions for legacy code maintenance.", "link": "https://marketplace.visualstudio.com/items?itemName=YourCompany.gamma-ext-pack", "notes": "Includes older compiler extensions." },
+        { "category": "Genesys Cloud Scripting", "item": "Legacy Script Editor", "description": "Access link for older PureCloud Script Editor.", "link": "https://apps.mypurecloud.com/scripts/legacy", "notes": "Use IE for full compatibility." },
+        { "category": "Customer Dev Environment", "item": "Gamma Staging Environment", "description": "Staging environment for customer sign-off on small changes.", "link": "https://staging.gamma.customer.com", "notes": "Deploys automatically on merge to 'maintenance' branch." }
+    ]
+}
