@@ -1,6 +1,6 @@
 {
     "BSNC (Current)": [
-        { "category": "Process", "item": "Change Requests", "description": "Feature requests/changes.", "link": "https://genesyslab.sharepoint.com/:x:/r/sites/ScotiabankGCCXMigration/Shared%20Documents/General/Scotiabank%20SOW/OSM/Change%20Implementation%20Documents/ScotiaBank-Change%20Requests%20-%20Tracker.xlsx?d=w24fd728dc67e49f5a1b90cca0fa5e069&csf=1&web=1&e=xN7FKB", "notes": "N/A" },
+        { "category": "Process", "item": "SC Change-Requests Tracker", "description": "Feature requests/changes.", "link": "https://genesyslab.sharepoint.com/:x:/r/sites/ScotiabankGCCXMigration/Shared%20Documents/General/Scotiabank%20SOW/OSM/Change%20Implementation%20Documents/ScotiaBank-Change%20Requests%20-%20Tracker.xlsx?d=w24fd728dc67e49f5a1b90cca0fa5e069&csf=1&web=1&e=xN7FKB", "notes": "N/A" },
         { "category": "Process", "item": "Documented Steps", "description": "Change Documentation-Internal.", "link": "https://genesyslab.sharepoint.com/:f:/r/sites/ScotiabankGCCXMigration/Shared%20Documents/General/Scotiabank%20SOW/OSM/Change%20Implementation%20Documents/Change%20Documentation%20-%20Internal?csf=1&web=1&e=MyFBxj", "notes": "Document every steps of change made." },
         
         { "category": "Knowledge Transfer", "item": "ORF", "description": "Architecture and ORF T/S.", "link": "https://genesyslab.sharepoint.com/:f:/r/sites/ScotiabankGCCXMigration/Shared%20Documents/General/Scotiabank%20SOW/OSM/OSM%20Knowledge%20Transfer%20Recordings?csf=1&web=1&e=S99qnm", "notes": "KT with I.U and R.K" },
