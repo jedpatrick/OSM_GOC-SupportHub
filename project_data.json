@@ -49,6 +49,6 @@
     ],
         "PS Docs": [
         { "category": "KT", "item": "GC Telephony", "description": "August 06 2025 Session", "link": "https://genesyslab.sharepoint.com/sites/ScotiabankGCCXMigration/Shared%20Documents/Forms/AllItems.aspx?FolderCTID=0x0120006A731339474B0D40BB6185AEB43F9C4A&id=%2Fsites%2FScotiabankGCCXMigration%2FShared%20Documents%2FGeneral%2FScotiabank%20SOW%2FOSM%2FOSM%20Knowledge%20Transfer%20Recordings%2FTelephony%20Session%20Recordings", "notes": "Complete GC Telephony Training" },
-        { "category": "Process", "item": "End-of-Life (EOL) Assets List", "description": "List of all systems scheduled for decommissioning.", "link": "https://yourcompany.sharepoint.com/sites/Gamma/EOL_List", "notes": "Reference before starting any new development." },
-    ],
+        { "category": "Process", "item": "End-of-Life (EOL) Assets List", "description": "List of all systems scheduled for decommissioning.", "link": "https://yourcompany.sharepoint.com/sites/Gamma/EOL_List", "notes": "Reference before starting any new development." }
+    ]
 }
