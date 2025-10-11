@@ -62,6 +62,11 @@
             outline: none;
         }
         
+        /* New custom style for category separation */
+        .category-separator {
+            border-bottom: 4px solid #d1d5db; /* A slightly darker, thicker gray line */
+        }
+
         /* Responsive Table Styling */
         @media (max-width: 768px) {
             .container-main { padding: 1rem; }
@@ -87,6 +92,11 @@
                 font-weight: 600;
                 color: #4b5563;
                 content: attr(data-label);
+            }
+            .category-separator {
+                 /* Apply the separator style to the entire element in mobile view */
+                 border-bottom: 4px solid #d1d5db; 
+                 margin-bottom: 1.5rem; /* Add extra spacing for clarity */
             }
         }
     </style>
@@ -147,6 +157,7 @@
         const tabsContainer = document.getElementById('tabsContainer');
         const searchInput = document.getElementById('searchInput');
         let activeProject = ''; 
+        let lastCategory = ''; // Variable to track the last category rendered
 
         // Function to sanitize text for display (handle file paths)
         function sanitizeLink(link) {
@@ -167,11 +178,36 @@
         function renderTable(projectName) {
             const data = PROJECT_DATA[projectName];
             tableBody.innerHTML = '';
+            lastCategory = ''; // Reset category tracker when rendering a new project
 
             data.forEach((row, index) => {
                 const tr = document.createElement('tr');
-                tr.className = index % 2 === 0 ? 'bg-white hover:bg-blue-50' : 'bg-gray-50 hover:bg-blue-50';
                 
+                // Determine row class based on zebra striping
+                let rowClasses = index % 2 === 0 ? 'bg-white hover:bg-blue-50' : 'bg-gray-50 hover:bg-blue-50';
+                
+                // Check if the category has changed since the last row
+                if (row.category !== lastCategory && lastCategory !== '') {
+                    // If the category changed, add the separator class to the previous row
+                    // Note: Since we are iterating, we must apply the class *after* the previous row was created.
+                    // Instead of applying it to the previous row (which is hard to reference mid-loop), 
+                    // we will apply a TOP border to the *current* row if it is the start of a new category block.
+                    tr.classList.add('category-separator');
+                }
+
+                // If it's a new category block, always use the lighter color for better contrast with the separator line
+                if (row.category !== lastCategory) {
+                    rowClasses = 'bg-white hover:bg-blue-50';
+                    tr.classList.add('border-t-4', 'border-gray-300'); // Use Tailwind classes for top border if category changed
+                } else if (index % 2 === 0) {
+                     // Ensure non-first row of a category block follows the zebra stripe rule
+                    rowClasses = 'bg-white hover:bg-blue-50';
+                } else {
+                    rowClasses = 'bg-gray-50 hover:bg-blue-50';
+                }
+
+                tr.className = `${rowClasses} transition-all duration-150`;
+
                 tr.innerHTML = `
                     <td class="px-4 py-3 font-medium text-gray-900" data-label="Category">${row.category}</td>
                     <td class="px-4 py-3" data-label="Item/Topic">${row.item}</td>
@@ -180,6 +216,9 @@
                     <td class="px-4 py-3 text-sm text-gray-600" data-label="Notes/Comments">${row.notes}</td>
                 `;
                 tableBody.appendChild(tr);
+
+                // Update the tracker for the next iteration
+                lastCategory = row.category;
             });
             activeProject = projectName;
             updateActiveTab(projectName);
@@ -222,11 +261,16 @@
         searchInput.addEventListener('keyup', function() {
             const filter = searchInput.value.toLowerCase();
             const rows = tableBody.getElementsByTagName('tr');
+            let lastFilteredCategory = '';
 
             for (let i = 0; i < rows.length; i++) {
                 let row = rows[i];
                 let cells = row.getElementsByTagName('td');
                 let found = false;
+                let currentCategory = cells[0] ? cells[0].textContent || cells[0].innerText : '';
+
+                // Remove existing separator classes before checking filter
+                row.classList.remove('border-t-4', 'border-gray-300');
                 
                 // Only search Category, Item/Topic, and Description (first 3 cells)
                 for (let j = 0; j < 3; j++) {
@@ -241,6 +285,17 @@
                 }
                 
                 row.style.display = found ? '' : 'none';
+
+                // Re-apply separator logic only to visible (found) rows
+                if (found) {
+                    if (currentCategory !== lastFilteredCategory && lastFilteredCategory !== '') {
+                        row.classList.add('border-t-4', 'border-gray-300');
+                    }
+                    lastFilteredCategory = currentCategory;
+                } else {
+                    // Reset category tracker if the row is hidden
+                    lastFilteredCategory = '';
+                }
             }
         });
 
@@ -281,6 +336,6 @@
         // Initialize the app on load
         document.addEventListener('DOMContentLoaded', initializeHub);
     </script>
-    <!-- CACHE BUSTER TAG: V2.6 (Path Fix) -->
+    <!-- CACHE BUSTER TAG: V2.7 (Category Separator) -->
 </body>
 </html>
