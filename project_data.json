@@ -32,7 +32,7 @@
         { "category": "How-Tos", "item": "Deploying to Production", "description": "Emergency guide for hotfixes and urgent deployments.", "link": "https://yourcompany.confluence.com/display/OPS/Beta+Prod+Deployment", "notes": "Requires Lead approval + Team sign-off." }
     ],
     "TV (New/Upcoming)": [
-        { "category": "Process", "item": "Monthly Patch Cycle", "description": "Schedule and steps for applying OS and security patches to legacy servers.", "link": "https://yourcompany.confluence.com/display/GAMMA/Patching-Schedule", "notes": "Patches applied on the 3rd Tuesday of every month." },
+        { "category": "General Docs", "item": "All Files", "description": "Full Documentation.", "link": "https://genesyslab.sharepoint.com/:f:/r/sites/OSMGOCAccounts/Shared%20Documents/GOC/Teva/Documents?csf=1&web=1&e=oeMisH", "notes": "Check for updates" },
         { "category": "Process", "item": "End-of-Life (EOL) Assets List", "description": "List of all systems scheduled for decommissioning.", "link": "https://yourcompany.sharepoint.com/sites/Gamma/EOL_List", "notes": "Reference before starting any new development." },
 
         { "category": "Knowledge Transfer", "item": "System Architecture Diagrams", "description": "Original diagrams showing physical and virtual server layout.", "link": "\\shared-drive\\docs\\Gamma\\System_Arch.pdf", "notes": "Essential for understanding legacy dependencies." },
